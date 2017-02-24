@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>自定义checkbox,radio样式</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{font-size: 18px;line-height: 36px;font-family: "Microsoft Yahei"}
+	label{position: relative;}
+	input{display: none;}
+	/*雪碧图*/
+	.box1 .label1::before{content: "";width: 16px;height: 16px;background: url(99322cf8c3283e42.png) no-repeat -24px -10px;display: inline-block;margin-right: 5px;}
+	.box1 input[type="radio"]:checked + .label1::before{background: url(99322cf8c3283e42.png) no-repeat -59px -10px;}
+	.box1 .label2::before{content: "";width: 14px;height: 14px;background: url(99322cf8c3283e42.png) no-repeat -25px -33px;display: inline-block;margin-right: 5px;}
+	.box1 input[type="checkbox"]:checked + .label2::before{background: url(99322cf8c3283e42.png) no-repeat -60px -32px;}
+	
+	/*伪元素样式*/
+	.box2 .label1::before{content: "";display: inline-block;width: 14px;height: 14px;margin-right: 5px;border: 1px solid #d9d9d9;border-radius: 14px;}
+	.box2 input[type="radio"]:checked + .label1::before{content: "\2022";font-size: 22px;text-align: center;line-height:13px;color: #d73d32;border: 1px solid #d73d32;}
+	.box2 .label2::before{content: "";width: 12px;height: 12px;display: inline-block;margin-right: 5px;border: 1px solid #d9d9d9;}
+	.box2 input[type="checkbox"]:checked + .label2::before{content: "\2713";font-size: 12px;font-weight: 900;text-align: center;line-height:13px;color: #d73d32;border: 1px solid #d73d32;}
+	</style>
+</head>
+<body>
+<div class="box1">
+	<h2>方法一：雪碧图</h1>
+	<span>你的性别：</span>  
+	<input type="radio" id="male" name="sex" ></input><label for="male" class="label1">男</label>
+	<input type="radio" id="female" name="sex" ></input><label for="female" class="label1">女</label>
+	<br>
+	<span>你的爱好：</span>	
+	<input type="checkbox" id="book" name="kind"></input><label for="book" class="label2">读书</label>
+	<input type="checkbox" id="film" name="kind"></input><label for="film" class="label2">电影</label>
+</div>
+<div class="box2">
+	<h2>方法二：伪元素样式</h2>
+	<span>你的性别：</span>  
+	<input type="radio" id="male2" name="sex2" ></input><label for="male2" class="label1">男</label>
+	<input type="radio" id="female2" name="sex2" ></input><label for="female2" class="label1">女</label>
+	<br>
+	<span>你的爱好：</span>	
+	<input type="checkbox" id="book2" name="kind"></input><label for="book2" class="label2">读书</label>
+	<input type="checkbox" id="film2" name="kind"></input><label for="film2" class="label2">电影</label>
+</div>
+
+</body>
+</html>
