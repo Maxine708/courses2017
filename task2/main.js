@@ -17,7 +17,7 @@ window.onload=function(){
 		
 	}
 	
-	function getPos(){
+	function getPos(event){
 		var e=event||window.event,
 			cliX=e.clientX,//获取鼠标在窗口的X轴位置
 			cliY=e.clientY,//获取鼠标在窗口的Y轴位置
