@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式之入门</title>
+</head>
+<body>
+输入一段手机号码：<input type="text" value="" ></input>
+<input type="button" value="判断输入值是否为手机号码"></input>
+<br><br>
+输入一串字符串：<input type="text" value="" ></input>
+<input type="button" value="判断输入值是否有相邻的重复的单词"></input>
+<script type="text/javascript">
+	window.onload=function(){
+		var inArry=document.getElementsByTagName("input");
+		//手机号码前三位中国电信:133,153,180,181,189;中国联通:130,131,132,145,155,156,185,186;中国移动:134,135,136,137,138,139,147,150,151,152,157,158,159,182,183,184,187,188
+		var pattern1=/^(13\d|147|15[012356789]|18\d)\d{8}$/;
+		//单词重复匹配
+		var pattern2=/\b([a-zA-Z]+)\s+\1\b/;
+		// var pattern2=/\b([a-z]+)\b\s+\b\1\b/;
+
+		inArry[1].onclick=function(){
+			if (inArry[0].value == "") {
+				alert("输入值不能为空");
+			}else{
+				var str1=inArry[0].value;
+				alert(pattern1.test(str1));
+			}
+		}
+
+		inArry[3].onclick=function(){
+			if (inArry[2].value == "") {
+				alert("输入值不能为空");
+			}else{
+				var str2=inArry[2].value;
+				alert(pattern2.test("'"+str2+"'"));
+			}
+		}
+	}
+</script>
+</body>
+</html>
