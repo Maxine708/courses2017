@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基础JavaScript练习</title>
+	<style type="text/css">
+	ul{text-align: left;margin: 0 ;padding: 0;}
+	ul li{list-style: none;float: left;margin: 10px ;padding: 10px;background: red;color: #fff;cursor: pointer;}
+	</style>
+</head>
+<body>
+<input id="content" type="text" value=""></input>
+<input id="left_in" value="左侧入" type="button"></input>
+<input id="right_in" value="右侧入" type="button"></input>
+<input id="left_out" value="左侧出" type="button"></input>
+<input id="right_out" value="右侧出" type="button"></input>
+<ul id="ul_con">
+	
+</ul>
+<script type="text/javascript">
+	var aLi=$("ul_con").getElementsByTagName('li');
+	var reg=/^\d*$/;
+	function $(name){
+		return document.getElementById(name);
+	}
+	
+	
+
+	$("left_in").onclick=function(){
+		var n=document.createElement("li");
+		var t=document.createTextNode($("content").value);
+		//检查是否为空
+		if( $("content").value == "") {
+			alert('请输入');
+		}else{
+			//检查是否为数字
+			if (reg.test($("content").value)) {
+				n.appendChild(t);
+				$("content").value="";
+				if(aLi.length>0)  
+		          {  
+		            //第一个参数是要插入的元素，第二个参数是在哪个元素之前插入  
+		            $("ul_con").insertBefore(n,aLi[0]);
+		           }else{  
+		            $("ul_con").appendChild(n);  
+		           }  
+				eClick();
+			}else{
+				alert("请检查数字")
+			}
+			
+		}
+		
+
+	};
+	$("right_in").onclick=function(){
+		var n=document.createElement("li");
+		var t=document.createTextNode($("content").value);
+		if( $("content").value == "") {
+			alert('请输入');
+		}else{
+			if (reg.test($("content").value)) {
+				n.appendChild(t);
+				$("content").value="";
+				$("ul_con").appendChild(n); 
+				eClick();
+			}else{
+				alert("请检查数字")
+				
+			}
+			
+		}
+		
+	};
+	$("left_out").onclick=function(){
+		if (aLi.length>0) {
+			$("ul_con").removeChild($("ul_con").firstChild);
+		}else{alert("请插入")};
+		eClick();
+	};
+	$("right_out").onclick=function(){
+		if (aLi.length>0) {
+			$("ul_con").removeChild($("ul_con").lastChild);
+		}else{alert("请插入")};
+		eClick()
+		
+	};
+
+	
+	function eClick(){
+		if (aLi.length>0) {
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].onclick=function(){
+					$("ul_con").removeChild(this);
+				}
+			}
+		}
+	}
+</script>
+</body>
+</html>
