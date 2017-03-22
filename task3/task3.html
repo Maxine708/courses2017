@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式之入门</title>
+</head>
+<body>
+请输入一串手机号码<input type="text" id="phone" value="">
+<input type="button" value="判断是否为手机号码">
+<br>
+<br>
+请输入一串字符串<input type="text" id="words" value="">
+<input type="button" value="是否有相邻重复单词">
+<script type="text/javascript">
+	window.onload=function(){
+		var inArry=document.getElementsByTagName("input");
+		//移动手机号码前三位134-139、150-152，158-159，182，147，157，188，178，;联通号段130-132、155、156、186、176；电信133、153、189、180、181、177
+		var pattern1=/^(13\d|147|15\d[0,2,3,5,6,7,8,9]|17[6,7,8]|18[0,1,2,6,8,9])\d{8}$/;
+		//foo foo bar  
+		var pattern2=/[a-zA-Z]+/;
+		
+		inArry[1].onclick=function(){
+			var str1=document.getElementsByTagName("input")[0].value;
+			if (str1== "") {
+				alert("输入值不该为空");
+			}else{
+				alert(pattern1.test(str1));
+			};
+		}
+		inArry[3].onclick=function(){
+			var str2=document.getElementsByTagName("input")[2].value;
+			if (str2== "") {
+				alert("输入值不该为空");
+			}else{
+				alert(pattern2.test(str2));
+			};
+		}
+	}
+</script>
+</body>
+</html>
