@@ -23,7 +23,7 @@ filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false);
 .line_ani{animation:line_ani ease 1s 0s both;-webkit-animation:line_ani ease1s 0s both;}
 .line_ani2{animation:line_ani2 ease 1s 0s both;-webkit-animation:line_ani2 ease 1s 0s both;}
 
-    .masked {
+.masked {
         background-image: -webkit-linear-gradient(left, #f92806, #f98406 10%, #f9da06 20%, #f0f906 30%, #cef906 40%,#a0f906 50%,#06f93f 60%,#06f9c3 70%,#06e5f9 80%,#06e5f9 90%,#f92806);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
@@ -31,7 +31,7 @@ filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false);
         -webkit-animation: masked-animation 1s infinite linear;
         animation: masked-animation 1s infinite linear;
     }
-    .masked2{background-image: -webkit-linear-gradient(left, #06f939,#0faffa 10%, #0f78fa 50%, #0f78fa);
+.masked2{background-image: -webkit-linear-gradient(left, #06f939,#0faffa 10%, #0f78fa 50%, #0f78fa);
     	-webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         -webkit-background-size: 200% 100%;
