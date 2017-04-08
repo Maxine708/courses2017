@@ -1,0 +1,88 @@
+html,body,div{margin: 0;}
+.box{position: relative;}
+.blur{
+
+filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+-webkit-filter: blur(5px); /* Chrome, Opera */
+-moz-filter: blur(5px);
+-ms-filter: blur(5px);    
+filter: blur(5px); 
+filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false); /* IE8~IE9 */
+}
+.textbox{width: 310px;height: 288px;margin: 20px;position: absolute;top:0;left: 0;}
+.line{position: absolute;background: #fff;}
+.lines{width: 309px;left: 0;height: 2px;}
+.linec{height: 288px;width: 2px;}
+.line1{top: 0}
+.line2{bottom: 0;}
+.line3{left: 0;}
+.line4{right: 0;}
+.p1,.p2{text-align: center;font-size: 18px;line-height: 22px;font-family: "Microsoft Yahei"}
+.p1{margin-top: 150px;}
+
+.line_ani{animation:line_ani ease 1s 0s both;-webkit-animation:line_ani ease1s 0s both;}
+.line_ani2{animation:line_ani2 ease 1s 0s both;-webkit-animation:line_ani2 ease 1s 0s both;}
+
+.masked {
+        background-image: -webkit-linear-gradient(left, #f92806, #f98406 10%, #f9da06 20%, #f0f906 30%, #cef906 40%,#a0f906 50%,#06f93f 60%,#06f9c3 70%,#06e5f9 80%,#06e5f9 90%,#f92806);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        -webkit-animation: masked-animation 1s infinite linear;
+        animation: masked-animation 1s infinite linear;
+    }
+.masked2{background-image: -webkit-linear-gradient(left, #06f939,#0faffa 10%, #0f78fa 50%, #0f78fa);
+    	-webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        animation: masked-animation 1s infinite linear;
+        -webkit-animation: masked-animation 1s infinite linear;}
+
+@keyframes masked-animation {
+    0%  { background-position: 0 0;}
+    100% { background-position: -100% 0;}
+}
+@-webkit-keyframes masked-animation {
+    0%  { background-position: 0 0;}
+    100% { background-position: -100% 0;}
+}
+@keyframes line_ani{
+	0%{
+		width: 0;
+		left: 151px;
+	}
+	100%{
+		width: 309px;
+		left: 0;
+	}
+}
+@-webkit-keyframes line_ani{
+	0%{
+		width: 0;
+		left: 151px;
+	}
+	100%{
+		width: 309px;
+		left: 0;
+	}
+}
+@keyframes line_ani2{
+	0%{
+		height: 0;
+		top: 144px;
+	}
+	100%{
+		height: 288px;
+		top: 0;
+	}
+}
+@-webkit-keyframes line_ani2{
+	0%{
+		height: 0;
+		top: 144px;
+	}
+	100%{
+		height: 288px;
+		top: 0;
+	}
+}
