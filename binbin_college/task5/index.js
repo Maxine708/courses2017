@@ -12,7 +12,8 @@ $("start").onclick=function(){
 		myNums.setData();
 		myNums.selectionSort();
 		console.log(myNums.dataStore);
-		console.log(myNums.dataAni);
+		// setTimeout('myNums.setHeight()',1000);
+
 	}
 	$("left_in").onclick=function(){
 		var n=document.createElement("li");
@@ -20,7 +21,7 @@ $("start").onclick=function(){
 		var tt=parseInt($("content").value);
 			//检查是否为数字
 			if (reg.test($("content").value)) {
-				n.appendChild(t);
+				// n.appendChild(t);
 				// n.setAttribute('height', '100px');
 				n.style.height=tt*2+'px';
 				$("content").value="";
