@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>模糊匹配</title>
+	<style type="text/css">
+	html,body,ul,li,h4{margin: 0 ;padding: 0;}
+	body{font-family: "Microsoft Yahei"}
+	.wrap{text-align: center;}
+	#list{width: 217px;border: 1px solid #000;margin: 0 auto;padding-bottom: 50px;padding-left: 15px;}
+	#list li{margin-left: 15px;color: #000;font-size: 16px;text-align: left}
+	#text{width: 100px;}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<h4>批量输入：</h4>
+	<textarea class="" rows="3" cols="28" id="content"></textarea>
+	<br><input type="button" id="daoru" value="上面导入下面"></input><input type="button" id="clear" value="清空下面数据"></input>
+	<h4>获得元素：</h4>
+	<ul id="list"></ul>
+	<span>查询文本：</span>
+	<input type="text" id="text"></input>
+	<input type="button" value="查询" id="search"></input>
+</div>
+<script type="text/javascript">
+/**模糊匹配
+点击查询按钮，获得input[text]和textarea内的元素内容
+将input[text]内的文本作为正则，在textarea进行模糊匹配
+改变颜色
+**/
+window.onload=function(){
+	function $(id){
+		return document.getElementById(id)
+	}
+	$("daoru").onclick=function(){
+		if (!$("content").value=="") {
+			var str=$("content").value;
+			var pattern=/,|，|、|\s/gi;
+			var EArray=str.split(pattern);
+			for (var i = 0; i < EArray.length; i++) {
+				var Cli=document.createElement("li");
+				var t=document.createTextNode(EArray[i]);
+				Cli.appendChild(t);
+				$("list").appendChild(Cli);
+				// $("list")[i].innerHTML=EArray[i];
+
+			}
+
+		}else{alert("无导入数据！请输入")}
+		
+	}
+	$("clear").onclick=function(){
+		while ($("list").hasChildNodes()) {
+            $("list").removeChild($("list").firstChild);
+        }
+	}
+	$("search").onclick=function(){
+		if (!$("content").value=="") {
+			if(!$("text").value==""){
+
+				for (var i = 0; i < $("list").childNodes.length; i++) {
+					var str2=$("list").childNodes[i].innerHTML;
+					var keyWord=$("text").value;
+					if (str2.indexOf(keyWord)>=0) {
+						$("list").childNodes[i].style.color="red";
+					}
+					
+				}
+
+			}else{
+				alert("请输入查询内容")
+			}
+		}else{
+			alert("文本框内没有内容，请输入")
+		}
+	}　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+}	
+</script>
+
+
+
+</body>
+</html>
