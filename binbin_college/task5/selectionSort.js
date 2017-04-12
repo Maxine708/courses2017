@@ -8,8 +8,7 @@ function CArray() {
 	this.selectionSort=selectionSort;
 }
 function setData(){
-	//IE8以下不兼容
-	items=document.querySelectorAll("#ul_con li");
+	items=document.querySelectorAll("#ul_con li");//IE8以下不兼容
 	for (var i = 0; i < items.length; i++) {
 		this.dataStore[i]=items[i].offsetHeight;
 	};
@@ -20,6 +19,7 @@ function swap(arr,index1,index2,arr2){
 	arr[index2]=temp;
 	// items[index1].style.backgroundColor="#000";
 	// items[index2].style.backgroundColor="#000";
+	
 	items[index1].style.height=arr[index1]+'px';
 	items[index2].style.height=arr[index2]+'px';
 }
