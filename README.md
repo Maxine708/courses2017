@@ -6,6 +6,7 @@
 - task3——零基础JavaScript编码（三）[预览地址](https://maxine708.github.io/courses2017/binbin_college/task3/index.html)
 - task4——基础JavaScript编码（一）[预览地址](https://maxine708.github.io/courses2017/binbin_college/task4/index.html)
 - task5——基础JavaScript编码（二）[预览地址](https://maxine708.github.io/courses2017/binbin_college/task5/index.html)
+- task6——基础JavaScript编码（三）[预览地址](https://maxine708.github.io/courses2017/binbin_college/task6/index.html)
 ### 百度糯米前端技术学院
 - task1——自定义checkbox， radio样式[预览地址](https://maxine708.github.io/courses2017/task1/task1.html)
 - task2——自定义网页右键菜单[预览地址](https://maxine708.github.io/courses2017/task2/task2.html)
